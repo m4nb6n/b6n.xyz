@@ -12,3 +12,10 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
+.idea
+**/node_modules/*
+**/.firebaserc
+*/npm-debug.log
+*~
+service-account-credentials.json
