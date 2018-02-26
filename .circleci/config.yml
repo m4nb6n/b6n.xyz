@@ -12,7 +12,7 @@ jobs:
       - run:
           name: "Test Website"
           command: htmlproofer ~/project/src/public --allow-hash-href --check-html --empty-alt-ignore
-  deploy:
+  deploy_it:
     docker:
       - image: devillex/docker-firebase
     steps:
@@ -23,7 +23,7 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - deploy
+      - deploy_it
         requires:
           - build
         filters:
