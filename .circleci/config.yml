@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  b:
     docker:
       - image: felicianotech/docker-hugo:0.21
     working_directory: ~/project
@@ -20,9 +20,9 @@ jobs:
 
 workflows:
   version: 2
-  build_and_deploy_it:
+  b-d:
     jobs:
-      - build:
+      - b
       - deploy_it:
         requires:
           - build
