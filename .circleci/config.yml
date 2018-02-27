@@ -13,6 +13,8 @@ jobs:
           command: HUGO_ENV=production hugo -v -s /ws -t introduction 
       - persist_to_workspace:
           root: /ws
+          paths:
+            - .
   deploy:
     docker:
       - image: devillex/docker-firebase
