@@ -1,8 +1,4 @@
-defaults: &defaults
-  working_directory: /tmp
-
 version: 2
-
 jobs:
   build:
     docker:
@@ -18,7 +14,6 @@ jobs:
   deploy:
     docker:
       - image: devillex/docker-firebase
-    working_directory: /tmp
     steps:
       - attach_workspace:
           at: /tmp
