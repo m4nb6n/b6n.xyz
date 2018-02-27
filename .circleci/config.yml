@@ -7,8 +7,10 @@ jobs:
     steps:
       - checkout
       - run:
+          command: git clone https://github.com/hivickylai/hugo-theme-introduction.git themes/introduction
+      - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s -t introduction /tmp
+          command: HUGO_ENV=production hugo -v -s /ws -t introduction 
       - persist_to_workspace:
           root: /ws
   deploy:
