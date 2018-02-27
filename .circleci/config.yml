@@ -7,16 +7,14 @@ jobs:
   build:
     docker:
       - image: felicianotech/docker-hugo:0.36.1
-    working_directory: /tmp/public
+    working_directory: /tmp
     steps:
       - checkout
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s /tmp/public/
+          command: HUGO_ENV=production hugo -v -s -t introduction /tmp
       - persist_to_workspace:
           root: /tmp
-          paths:
-            - public
   deploy:
     docker:
       - image: devillex/docker-firebase
