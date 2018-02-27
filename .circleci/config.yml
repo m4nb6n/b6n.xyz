@@ -1,6 +1,7 @@
 version: 2
+
 jobs:
-  one:
+  build:
     docker:
       - image: felicianotech/docker-hugo:0.21
     working_directory: ~/project
@@ -12,7 +13,7 @@ jobs:
       - run:
           name: "Test Website"
           command: htmlproofer ~/project/src/public --allow-hash-href --check-html --empty-alt-ignore
-  two:
+  deploy:
     docker:
       - image: devillex/docker-firebase
     steps:
@@ -20,9 +21,9 @@ jobs:
 
 workflows:
   version: 2
-  b_and_d:
+  build-test-and-deploy:
     jobs:
-      - one
-      - two:
-        requires:
-          - one
+      - build
+      - deploy:
+          requires:
+            - build
