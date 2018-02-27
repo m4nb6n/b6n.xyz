@@ -12,10 +12,10 @@ jobs:
       - checkout
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s ~/public/
+          command: HUGO_ENV=production hugo -v -s /tmp/public/
       - run:
           name: "Test Website"
-          command: htmlproofer ~/project/src/public --allow-hash-href --check-html --empty-alt-ignore
+          command: htmlproofer /tmp/public --allow-hash-href --check-html --empty-alt-ignore
       - persist_to_workspace:
           root: /tmp/public
   deploy:
