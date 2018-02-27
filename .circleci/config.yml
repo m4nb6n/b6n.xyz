@@ -18,9 +18,10 @@ jobs:
   deploy:
     docker:
       - image: devillex/docker-firebase
+    working_directory: /ws
     steps:
       - attach_workspace:
-          at: /ws/.
+          at: /ws
       - run: firebase --project b6n-website deploy --only hosting
 
 workflows:
