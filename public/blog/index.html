@@ -14,10 +14,10 @@
 <title>
 
 
-     404 Page not found 
+     Blogs 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="/blog/">
 
 
 
@@ -52,7 +52,7 @@ crossorigin="anonymous"></script>
 
 
 
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="b6n" />
+  <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="b6n" />
 
 
 </head>
@@ -61,12 +61,12 @@ crossorigin="anonymous"></script>
 
 <div class="section" id="top">
 
-    <div class="container hero is-medium has-text-centered  fade-in one ">
-    <h1 class="bold-title is-1">404</h1>
+    <div class="container hero  fade-in one ">
+    <h1 class="bold-title is-1">Blog</h1>
     </div>
 
-
-<div class="section  fade-in two ">
+    
+    <div class="section no-padding  fade-in two ">
 
     <div class="container">
     <hr>
@@ -83,9 +83,7 @@ crossorigin="anonymous"></script>
       <span class="nav-item">
         <a href="/#about">About</a> 
       </span>
-      <span class="nav-item">
-        <a href="/">Back to </a>
-      </span> 
+    
       <span class="nav-item">
         <a href="/#contact">Contact</a>
       </span>
@@ -98,12 +96,43 @@ crossorigin="anonymous"></script>
 </nav>
 <hr>
     </div>
+       
+    <div class="container">
 
-    <div class="container  fade-in two  top-pad">
-        Oops! Either you've found a bug (in which case, <a href="mailto:hey@b6n.xyz">please tell me</a>) or you're just making things up. This page doesn't exist!
+    
+    <h2 class="title is-2 top-pad">Latest Post</h2>
+         
+        <div class="summary">Nov 1, 2017
+            <h3 class="title is-3 strong-post-title"><a href="/blog/coffee-ipsum/">Coffee Ipsum</a></h3>
+                <div class="markdown">
+                Aromatic aroma con panna, crema so coffee robust coffee barista, café au lait trifecta that strong blue mountain cortado aftertaste. Aroma extraction french press, skinny sweet, blue mountain cup roast barista, beans, extra cappuccino mug crema strong. Americano caffeine white, con panna saucer sit, con panna eu, carajillo aftertaste kopi-luwak, body aftertaste cup single origin café au lait saucer. Macchiato java sweet arabica, turkish cup, eu flavour mug extraction white cortado saucer est white brewed instant, rich, barista breve cappuccino barista organic.
+                
+                <a href="/blog/coffee-ipsum/">...Read More</a>
+                
+                </div>
+        </div>
+        
+    
+
+    <h2 class="title is-2 top-pad">All Posts</h2>
+        <ul>
+        
+            
+                <li class="post-item">
+    <span><a href="/blog/coffee-ipsum/">Coffee Ipsum</a></span> - <span>Nov 1, 2017</span>
+</li>
+            
+        
+        </ul>
+
     </div>
 
-<div class="container top-pad"><hr></div>
+<div class="container has-text-centered top-pad">
+<hr>
+<a href="/blog/#top"><i class="fa fa-arrow-up"></i></a>
+<hr>
+</div>
+
 <div class="section" id="footer">
     <div class="container has-text-centered">
         
@@ -113,3 +142,18 @@ crossorigin="anonymous"></script>
 </div>
 
 </div>
+</div>
+
+
+<script>
+$('a[href^="\/blog\/#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+</script>
+
+</body>
