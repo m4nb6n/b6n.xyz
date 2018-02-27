@@ -17,14 +17,14 @@ jobs:
           name: "Test Website"
           command: htmlproofer ~/project/src/public --allow-hash-href --check-html --empty-alt-ignore
       - persist_to_workspace:
-        root: /tmp/public
+          root: /tmp/public
   deploy:
     docker:
       - image: devillex/docker-firebase
     working_directory: /tmp
     steps:
       - attach_workspace:
-        at: /tmp
+          at: /tmp
       - run: firebase --project b6n-website deploy --only hosting
 
 workflows:
