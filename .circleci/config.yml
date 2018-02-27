@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: ~
+  working_directory: /tmp
 
 version: 2
 
@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: felicianotech/docker-hugo:0.36.1
-    working_directory: ~/public
+    working_directory: /tmp/public
     steps:
       - checkout
       - run:
@@ -17,14 +17,14 @@ jobs:
           name: "Test Website"
           command: htmlproofer ~/project/src/public --allow-hash-href --check-html --empty-alt-ignore
       - persist_to_workspace:
-        root: ~
+        root: /tmp/public
   deploy:
     docker:
       - image: devillex/docker-firebase
-    working_directory: ~
+    working_directory: /tmp
     steps:
       - attach_workspace:
-        at: ~
+        at: /tmp
       - run: firebase --project b6n-website deploy --only hosting
 
 workflows:
