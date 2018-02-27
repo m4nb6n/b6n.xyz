@@ -3,20 +3,20 @@ jobs:
   build:
     docker:
       - image: felicianotech/docker-hugo:0.36.1
-    working_directory: /tmp
+    working_directory: /ws
     steps:
       - checkout
       - run:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v -s -t introduction /tmp
       - persist_to_workspace:
-          root: /tmp
+          root: /ws
   deploy:
     docker:
       - image: devillex/docker-firebase
     steps:
       - attach_workspace:
-          at: /tmp
+          at: /ws
       - run: firebase --project b6n-website deploy --only hosting
 
 workflows:
