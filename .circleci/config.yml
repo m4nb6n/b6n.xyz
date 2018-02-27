@@ -16,6 +16,7 @@ jobs:
   deploy:
     docker:
       - image: devillex/docker-firebase
+    working_directory: ~/
     steps:
       - run: firebase --project b6n-website deploy --only hosting
 
