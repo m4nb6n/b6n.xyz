@@ -13,9 +13,6 @@ jobs:
       - run:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v -s /tmp/public/
-      - run:
-          name: "Test Website"
-          command: htmlproofer /tmp/public --allow-hash-href --check-html --empty-alt-ignore
       - persist_to_workspace:
           root: /tmp/public
   deploy:
