@@ -14,7 +14,7 @@ jobs:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v -s /tmp/public/
       - persist_to_workspace:
-          root: tmp
+          root: ~/tmp
           paths:
             - public
   deploy:
