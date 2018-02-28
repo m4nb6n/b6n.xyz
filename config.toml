@@ -11,7 +11,7 @@ canonifyurls        = true                              # Turns relative urls in
 [params]
     bloghead            = "Blog"                        # Full name shows on blog post pages
     firstname           = "b6n"                # First name shows in introduction on main page
-    tagline             = "I'm a test site."       # Appears after the introduction
+    tagline             = "Welcome to b6n!  A blog that is currently under construction."       # Appears after the introduction
     introheight         = "fullheight"                       # Input either 'medium' or 'large' or 'fullheight'
     themestyle          = "dark"                        # Choose 'light' or 'dark'
     avatar              = "images/back-off-warchild-seriously.jpg"             # Path to image in static folder eg. img/avatar.png, or comment out to remove
@@ -46,8 +46,8 @@ canonifyurls        = true                              # Turns relative urls in
 # Find icon names here: http://fontawesome.io/cheatsheet/
 
 #[[params.social]]
-#    url = "https://twitter.com/"
-#    icon = "twitter"
+    url = "https://twitter.com/mqarty"
+    icon = "twitter"
 
 #[[params.social]]
 #    url = "https://facebook.com/"
