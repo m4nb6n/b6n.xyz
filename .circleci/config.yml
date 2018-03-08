@@ -29,7 +29,7 @@ workflows:
   build-test-and-approval-deploy:
     jobs:
       - build
-      - hold:
+      - hold_it:
         type: approval
         requires:
           - build
