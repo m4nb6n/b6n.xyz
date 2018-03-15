@@ -29,10 +29,10 @@ workflows:
   build-and-approval-deploy:
     jobs:
       - build
-      - hold:
-        type: approval
-        requires:
-          - build
+      #- hold:
+      #  type: approval
+      #  requires:
+      #    - build
       - deploy:
           requires:
             - hold
